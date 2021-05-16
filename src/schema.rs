@@ -1,9 +1,9 @@
 table! {
     points (id) {
         id -> Int4,
-        user_id -> Nullable<Int4>,
-        vendor_id -> Nullable<Int4>,
-        amount -> Nullable<Int4>,
+        user_id -> Int4,
+        vendor_id -> Int4,
+        amount -> Int4,
     }
 }
 

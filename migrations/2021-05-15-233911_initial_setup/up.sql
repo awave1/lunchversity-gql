@@ -16,8 +16,8 @@ CREATE TABLE users (
 );
 CREATE TABLE points (
   id INT GENERATED ALWAYS AS IDENTITY,
-  user_id INT,
-  vendor_id INT,
+  user_id INT NOT NULL,
+  vendor_id INT NOT NULL,
   amount INT,
   PRIMARY KEY(id),
   CONSTRAINT fk_user_id FOREIGN KEY(user_id) REFERENCES users(id),
