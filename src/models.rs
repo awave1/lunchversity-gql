@@ -1,7 +1,7 @@
 use diesel::Queryable;
 use juniper::{GraphQLEnum, GraphQLInputObject, GraphQLObject};
 
-#[derive(GraphQLObject, Queryable)]
+#[derive(GraphQLObject, Queryable, Debug)]
 #[graphql(description = "A Type of user we have on the platform")]
 pub struct User {
   pub id: i32,

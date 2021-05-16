@@ -30,4 +30,8 @@ table! {
 joinable!(points -> users (user_id));
 joinable!(points -> vendors (vendor_id));
 
-allow_tables_to_appear_in_same_query!(points, users, vendors,);
+allow_tables_to_appear_in_same_query!(
+    points,
+    users,
+    vendors,
+);
