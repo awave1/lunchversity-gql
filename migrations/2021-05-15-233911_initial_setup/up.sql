@@ -31,6 +31,13 @@ VALUES (
     '6b3a55e0261b0304143f805a24924d0c1c44524821305f31d9277843b8a10f4e',
     '5875875858'
   );
+INSERT INTO vendors(name, email, password, phone)
+VALUES (
+    'Ramen',
+    'ramen@email.com',
+    '6b3a55e0261b0304143f805a24924d0c1c44524821305f31d9277843b8a10f4e',
+    '5875875858'
+  );
 INSERT INTO users(name, email, password, ucid)
 VALUES (
     'Brenda Galoc',
@@ -38,5 +45,14 @@ VALUES (
     '6b3a55e0261b0304143f805a24924d0c1c44524821305f31d9277843b8a10f4e',
     '30018900'
   );
+INSERT INTO users(name, email, password, ucid)
+VALUES (
+    'Artem Golovin',
+    'artem@email.com',
+    '6b3a55e0261b0304143f805a24924d0c1c44524821305f31d9277843b8a10f4e',
+    '30018900'
+  );
 INSERT INTO points(user_id, vendor_id, amount)
 VALUES (1, 1, 0);
+INSERT INTO points(user_id, vendor_id, amount)
+VALUES (1, 2, 30);
