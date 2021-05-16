@@ -6,9 +6,11 @@ use actix_web::{middleware, web, App, Error, HttpResponse, HttpServer};
 use juniper::http::graphiql::graphiql_source;
 use juniper::http::GraphQLRequest;
 
-mod schema;
+mod gql;
+mod models;
+mod queries;
 
-use crate::schema::{create_schema, Schema};
+use crate::gql::{create_schema, Schema};
 
 /// GraphiQL endpoint
 async fn graphiql() -> HttpResponse {
