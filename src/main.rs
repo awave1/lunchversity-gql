@@ -18,9 +18,13 @@ mod schema;
 
 use crate::gql::{create_schema, Schema};
 
+// const IP: &str = "127.0.0.1:8080";
+const IP: &str = "172.27.176.158:8080";
+
 /// GraphiQL endpoint
 async fn graphiql() -> HttpResponse {
-    let html = graphiql_source("http://127.0.0.1:8080/graphql", None);
+    let endpoint: String = format!("http://{}/graphql", IP);
+    let html = graphiql_source(endpoint.as_str(), None);
     HttpResponse::Ok()
         .content_type("text/html; charset=utf-8")
         .body(html)
@@ -63,7 +67,7 @@ async fn main() -> io::Result<()> {
             .service(web::resource("/graphql").route(web::post().to(graphql)))
             .service(web::resource("/graphiql").route(web::get().to(graphiql)))
     })
-    .bind("127.0.0.1:8080")?
+    .bind(format!("{}", IP))?
     .run()
     .await
 }
